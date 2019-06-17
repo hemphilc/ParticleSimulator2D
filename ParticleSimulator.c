@@ -31,7 +31,7 @@ ParticleSimulator initParticleSimulator(unsigned int w, unsigned int h);
 void getGridDimensionInput(int *width, int *height);
 void getGridRowInputs(ParticleSimulator *ps);
 void initParticleSimulatorGravity(ParticleSimulator *ps);
-void printParticleSimulatorState(ParticleSimulator ps);
+void printParticleSimulatorState(const ParticleSimulator ps);
 void freeParticleSimulatorGrid(ParticleSimulator *ps);
 
 
@@ -39,7 +39,7 @@ int main(void)
 {
 	printf("\nWelcome to Particle Simulator 2D!\n\n");
 	
-	unsigned int i, width, height;
+	unsigned int width, height;
 	
 	// Retrieve the first line from STDIN
     // This should be two integers, separated by a space.
@@ -56,12 +56,14 @@ int main(void)
 	getGridRowInputs(&ps);
 	
 	// Print initial grid state.
+	printf("\nPrinting initial state...\n\n");
 	printParticleSimulatorState(ps);
 
 	// Initiate gravity on grid.
 	//initParticleSimulatorGravity(&ps);
 
 	// Print post-gravity grid state.
+	printf("\nPrinting post-gravity state...\n\n");
 	printParticleSimulatorState(ps);
 
 	// Free the ParticleSimulator struct resources.
@@ -88,7 +90,7 @@ void initParticleSimulatorGravity(ParticleSimulator *ps) {
 }
 
 
-/* Initializes a ParticleSimulator struct using width and height.
+/* Prints a ParticleSimulator grid in its current state to stdout.
     param:  ps - a ParticleSimulator struct
     pre:    ParticleSimulator grid is initialized.
     post:   ParticleSimulator grid is printed to stdout in its 
@@ -163,6 +165,11 @@ void freeParticleSimulatorGrid(ParticleSimulator *ps) {
 		return;
 	}
 	
+	if(!ps->grid) {
+		fprintf(stderr, "ParticleSimulator grid pointer is null.\n");
+		return;
+	}
+	
 	unsigned int i;
 	for(i = 0; i < ps->height; i++) {
         free(ps->grid[i]); // Free each string pointer
@@ -180,6 +187,16 @@ void freeParticleSimulatorGrid(ParticleSimulator *ps) {
     ret:    ParticleSimulator struct with initialized grid by reference.
 */
 void getGridRowInputs(ParticleSimulator *ps) {
+	if(!ps) {
+		fprintf(stderr, "ParticleSimulator pointer is null.\n");
+		return;
+	}
+	
+	if(!ps->grid) {
+		fprintf(stderr, "ParticleSimulator grid pointer is null.\n");
+		return;
+	}
+	
 	int returnVal;
 	unsigned int i, j;
 	char buffer[ps->width + 1]; // + 1 is for the null terminator
@@ -193,8 +210,8 @@ void getGridRowInputs(ParticleSimulator *ps) {
 	// 		'T'  - table, through which rocks may not fall.
 	for(i = 0; i < ps->height; i++) { 
 		// Prompt the user for each row in the grid
-		printf("Please provide a row of length %d consisting of ' ', '.', ':', and 'T' characters.", ps->width);
-		returnVal = getLine(">: ", buffer, sizeof(buffer), true);
+		printf("Please provide a row of length %d consisting of ' ', '.', ':', and 'T' characters.\n", ps->width);
+		returnVal = getLine("> ", buffer, sizeof(buffer), true);
 		
 		if(returnVal == NO_INPUT) {
 			fprintf(stderr, "No input provided.\n");
@@ -230,7 +247,13 @@ void getGridRowInputs(ParticleSimulator *ps) {
 		
 		// Copy the contents of the row buffer into the
 		// ParticleSimulator grid
-		strncpy(ps->grid[i], buffer, sizeof(buffer));
+		if(!ps->grid[i]) {
+			fprintf(stderr, "ParticleSimulator grid pointer is null.\n");
+			return;
+		}
+		else {
+			strncpy(ps->grid[i], buffer, sizeof(buffer));
+		}
 	}
 }
 
@@ -253,7 +276,7 @@ void getGridDimensionInput(int *width, int *height) {
 	// Prompt the user for the initial dimensional input for the grid
 	printf("Please enter two integers, which represent width and height, separated by a single space.\n");
 	printf("The range of these integer values must be from %d to %d separated by a single space.\n", RANGE_LOW, RANGE_HIGH);
-	returnVal = getLine(">: ", buffer, sizeof(buffer), false);
+	returnVal = getLine("> ", buffer, sizeof(buffer), false);
 	
 	if(returnVal == NO_INPUT) {
 		fprintf(stderr, "No input provided.\n");
