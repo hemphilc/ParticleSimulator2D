@@ -117,7 +117,7 @@ int initParticleSimulatorGravity(ParticleSimulator *ps) {
                 for(k = j - 1; k >= 0; k--) {
 
                     // If next occupied cell above is a table
-                    // then increment j to 1 cell above the table
+                    // then decrement j to 1 cell above the table
                     if(ps->grid[k][i] == 'T') {
                         j = k - 1;
                         break;
@@ -156,7 +156,7 @@ int initParticleSimulatorGravity(ParticleSimulator *ps) {
                 for(k = j - 1; k >= 0; k--) {
 
                     // If next occupied cell above is a table
-                    // then increment j to 1 cell above the table
+                    // then decrement j to 1 cell above the table
                     if(ps->grid[k][i] == 'T') {
                         j = k - 1;
                         break;
