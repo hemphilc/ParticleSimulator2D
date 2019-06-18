@@ -1,25 +1,18 @@
-#default: ParticleSimulator
-
-#program.o: ParticleSimulator.c ParticleSimulator.h
-#	gcc -c ParticleSimulator.c -o ParticleSimulator.o
-
-#program: ParticleSimulator.o
-#	gcc ParticleSimulator.o -o ParticleSimulator
-
-#clean:
-#	-rm -f ParticleSimulator.o
-#	-rm -f ParticleSimulator
-
 CC 			= gcc
 CFLAGS 		= -Wall
-LDFLAGS 	=
-OBJFILES 	= ParticleSimulator.o main.o
-TARGET 		= ParticleSimulator
+OBJFILES1 	= ParticleSimulator.o main.o
+OBJFILES2 	= ParticleSimulator.o testMain.o
+TARGET1 	= ParticleSimulator
+TARGET2 	= TestParticleSimulator
 
-all: $(TARGET)
+all: $(TARGET1) $(TARGET2)
 
-$(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
+$(TARGET1): $(OBJFILES1)
+	$(CC) $(CFLAGS) -o $(TARGET1) $(OBJFILES1)
+
+$(TARGET2): $(OBJFILES2)
+	$(CC) $(CFLAGS) -o $(TARGET2) $(OBJFILES2)
 
 clean:
-	rm -f $(OBJFILES) $(TARGET) *~
+	rm -f $(OBJFILES1) $(TARGET1) *~
+	rm -f $(OBJFILES2) $(TARGET2) *~
