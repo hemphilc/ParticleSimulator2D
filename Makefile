@@ -1,4 +1,4 @@
-CC			= gcc
+CC		= gcc
 CFLAGS 		= -Wall
 OBJFILES1 	= ParticleSimulator.o main.o
 OBJFILES2 	= ParticleSimulator.o testMain.o
