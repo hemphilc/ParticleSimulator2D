@@ -457,7 +457,7 @@ int getLine(const char *prompt, char *buffer, size_t sz) {
         return NO_INPUT;
     }
 
-    // Check for a newline (\n) character.
+    // Check for a newline character.
     // If the input was too long, there will be no newline.
     // In that case, flush to end of line so that excess
     // doesn't affect the next call.
