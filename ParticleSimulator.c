@@ -11,23 +11,13 @@
 #define SUCCESS		  0
 #define ERROR		  -1
 
-
-// Define Boolean operators
-typedef int bool;
-enum {
-    false,
-    true
-};
-
-
 typedef struct {
     unsigned int width;
     unsigned int height;
     char** grid;
 } ParticleSimulator;
 
-
-int getLine(const char *prompt, char *buffer, size_t sz, bool isSimRow);
+int getLine(const char *prompt, char *buffer, size_t sz);
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h);
 int getGridDimensionInput(unsigned int *width, unsigned int *height);
 int getGridRowInputs(ParticleSimulator *ps);
@@ -334,8 +324,8 @@ int getGridRowInputs(ParticleSimulator *ps) {
     // 		'T'  - table, through which rocks may not fall.
     for(i = 0; i < ps->height; i++) {
         // Prompt the user for each row in the grid
-        printf("Please provide a row of length %d consisting of ' ', '.', ':', and 'T' characters.\n", ps->width);
-        returnVal = getLine("> ", buffer, sizeof(buffer), true);
+        printf("Please provide a row of length %d consisting only of ' ', '.', ':', and 'T' characters.\n", ps->width);
+        returnVal = getLine("> ", buffer, sizeof(buffer));
 
         if(returnVal == NO_INPUT) {
             printError("Error: No input provided.\n");
@@ -346,9 +336,11 @@ int getGridRowInputs(ParticleSimulator *ps) {
             return ERROR;
         }
 
-        // May be redundant to check length of buffer
+        // We know the input is not too long, so if the input is not
+        // equal to the specified width, then it is too short.
+        // to make sure its not too short
         if(strlen(buffer) != ps->width) {
-            printError("Error: Input provided was too long.\n");
+            printError("Error: Input provided was too short.\n");
             return ERROR;
         }
 
@@ -393,8 +385,8 @@ int getGridDimensionInput(unsigned int *width, unsigned int *height) {
 
     // Prompt the user for the initial dimensional input for the grid
     printf("Please enter two integers, which represent width and height, separated by a single space.\n");
-    printf("The range of these integer values must be from %d to %d separated by a single space.\n", RANGE_LOW, RANGE_HIGH);
-    returnVal = getLine("> ", buffer, sizeof(buffer), false);
+    printf("The range of these integer values must be from %d to %d.\n", RANGE_LOW, RANGE_HIGH);
+    returnVal = getLine("> ", buffer, sizeof(buffer));
 
     // Check to see if user provide empty string
     if(returnVal == NO_INPUT) {
@@ -441,7 +433,7 @@ int getGridDimensionInput(unsigned int *width, unsigned int *height) {
     ret:    an integer indicating 0 for INPUT_OK, 1 for no input
             or 2 for an over-exceeded buffer length.
 */
-int getLine(const char *prompt, char *buffer, size_t sz, bool isSimRow) {
+int getLine(const char *prompt, char *buffer, size_t sz) {
     int ch, overRun;
 
     // Prompt user for input from stdin
@@ -479,21 +471,7 @@ int getLine(const char *prompt, char *buffer, size_t sz, bool isSimRow) {
 
     // Otherwise strip newline and give string back to
     // caller with null termination.
-    if(!isSimRow) {
-        // If the input specifies width/height dimensions,
-        // then it may be variable in length so we use
-        // strlen to determine the length of the input
-        buffer[strlen(buffer) - 1] = '\0';
-    }
-    else {
-        // If the input specifies a row in the grid, the
-        // the length of the row is fixed. The length of the
-        // string will always be 1 less than the actual
-        // size of the buffer, so always null terminate at
-        // the end of the buffer to avoid eliminating the
-        // last character in the row.
-        buffer[sizeof(buffer) - 1] = '\0';
-    }
+    buffer[strlen(buffer) - 1] = '\0';
 
     return INPUT_OK;
 }
@@ -509,4 +487,3 @@ void printError(const char *msg) {
     fprintf(stderr, "%s\n", msg);
     fflush(stderr);
 }
-
