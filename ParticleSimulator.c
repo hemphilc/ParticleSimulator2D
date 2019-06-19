@@ -130,17 +130,17 @@ int printParticleSimulatorState(ParticleSimulator ps) {
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h) {
 	if(w <= 0) {
 		printError("initParticleSimulator() - Error: Width is less than 1.\n");
-        return ERROR;
+		return ERROR;
 	}
 	
 	if(h <= 0) {
 		printError("initParticleSimulator() - Error: Height is less than 1.\n");
-        return ERROR;
+		return ERROR;
 	}
 	
 	if(!ps) {
 		printError("initParticleSimulator() - Error: ParticleSimulator pointer is null.\n");
-        return ERROR;
+		return ERROR;
 	}
 	
     ps->width = w;
