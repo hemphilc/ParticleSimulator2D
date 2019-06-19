@@ -180,7 +180,7 @@ void freeParticleSimulatorGrid(ParticleSimulator *ps) {
     if(!ps->grid) {
         printError("freeParticleSimulatorGrid() - Error: ParticleSimulator grid pointer is null.\n");
         return;
-    }
+    }		
 
     unsigned int i;
     for(i = 0; i < ps->height; i++) {
