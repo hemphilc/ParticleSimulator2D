@@ -8,11 +8,18 @@
 #define INPUT_OK      0
 #define NO_INPUT      1
 #define TOO_LONG      2
-#define DIM_BUFF_LEN  10
 #define RANGE_LOW     1
 #define RANGE_HIGH    20
 #define SUCCESS       0
 #define ERROR         -1
+
+// DIM_BUFF_LEN depends on how many
+// digits RANGE_HIGH contains. For
+// example, if RANGE_HIGH is 20, then
+// the buffer should be able to hold 
+// 2 digits + space + 2 digits + a
+// null terminator = 6
+#define DIM_BUFF_LEN  6
 
 typedef struct {
     unsigned int width;
