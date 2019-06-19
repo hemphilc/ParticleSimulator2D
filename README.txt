@@ -5,7 +5,10 @@ Simulates how little rocks would fall in a 2D world.
 **NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. 
 The Makefile provided will compile the program correctly using the gcc compiler. 
 MinGW for Windows may also work as long as the dependencies for using Makefile are 
-installed.**
+installed. You may also compile each binary manually by using the commands below:**
+
+gcc -Wall ParticleSimulator.c main.c -o ParticleSimulator
+gcc -Wall ParticleSimulator.c testMain.c -o TestParticleSimulator
 
 **NOTE: The current program is set to allow a width and height from 1 to 20. This 
 can be changed by going into the ParticleSimulator.h file and adjusting the 
