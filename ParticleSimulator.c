@@ -128,6 +128,16 @@ int printParticleSimulatorState(ParticleSimulator ps) {
 
 
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h) {
+	if(w <= 0) {
+		pritnError("initParticleSimulator() - Error: Width is less than 1");
+        return ERROR;
+	}
+	
+	if(h <= 0) {
+		pritnError("initParticleSimulator() - Error: Height is less than 1");
+        return ERROR;
+	}
+	
     ps->width = w;
     ps->height = h;
     ps->grid = malloc(ps->height * sizeof(char*));
