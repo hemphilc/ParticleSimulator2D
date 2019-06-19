@@ -6,7 +6,7 @@ Simulates how little rocks would fall in a 2D world.
 
 **NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile provided will compile the program correctly using the gcc compiler. MinGW for Windows may also work as long as the dependencies for using Makefile are installed.**
 
-**NOTE: The current program is set to allow a width and height from 1 to 20. This can be changed by going into the ParticleSimulator.h file and adjusting the RANGE_LOW and RANGE_HIGH constant definitions. In addition to adjusting RANGE_LOW and RANGE_HIGH, you may be required to adjust the DIM_BUFF_LEN constant as well.
+**NOTE: The current program is set to allow a width and height from 1 to 20. This can be changed by going into the ParticleSimulator.h file and adjusting the RANGE_LOW and RANGE_HIGH constant definitions. In addition to adjusting RANGE_LOW and RANGE_HIGH, you may be required to adjust the DIM_BUFF_LEN constant as well. DIM_BUFF_LEN depends on how many digits RANGE_HIGH contains. For example, if RANGE_HIGH is 20, then the buffer should be able to hold 2 digits + space + 2 digits + null terminator = 6.
 
 1: Place ParticleSimulator.c, ParticleSimulator.h, main.c, testMain.c, and Makefile into your current working directory.
 
