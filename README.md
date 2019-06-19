@@ -6,6 +6,8 @@ Simulates how little rocks would fall in a 2D world.
 
 **NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile provided will compile the program correctly using the gcc compiler. MinGW for Windows may also work as long as the dependencies for using Makefile are installed.**
 
+**NOTE: The current program is set to allow a width and height from 1 to 20. This can be changed by going into the ParticleSimulator.h file and adjusting the RANGE_LOW and RANGE_HIGH constant definitions. In addition to adjusting RANGE_LOW and RANGE_HIGH, you may be required to adjust the DIM_BUFF_LEN constant as well.
+
 1: Place ParticleSimulator.c, ParticleSimulator.h, main.c, testMain.c, and Makefile into your current working directory.
 
 2: To compile both the Particle Simulator and the unit tests, enter 'make' into the command line. You should now see two binary executables in your working directory: ParticleSimulator and TestParticleSimulator
@@ -41,3 +43,11 @@ The main concern of manual testing should be the following:
   - are error messages relevant and do they prompt the user to provide the correct input?
 
 The combination of manual testing for stdin input and unit-tests should be comprehensive enough to validate the program's accuracy and functionality.
+
+**Test Plan**
+
+1: Compile and execute TestParticleSimulator unit tests.
+  - Pass: all tests complete successfully
+  - Fail: assertion causes unit tests to die
+  
+2:
