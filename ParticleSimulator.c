@@ -139,7 +139,7 @@ int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h)
 	}
 	
 	if(!ps) {
-		printError("initParticleSimulator() - Error: Particle Simulator struct is null.\n");
+		printError("initParticleSimulator() - Error: ParticleSimulator pointer is null.\n");
         return ERROR;
 	}
 	
