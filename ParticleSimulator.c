@@ -129,12 +129,17 @@ int printParticleSimulatorState(ParticleSimulator ps) {
 
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h) {
 	if(w <= 0) {
-		printError("initParticleSimulator() - Error: Width is less than 1");
+		printError("initParticleSimulator() - Error: Width is less than 1.\n");
         return ERROR;
 	}
 	
 	if(h <= 0) {
-		printError("initParticleSimulator() - Error: Height is less than 1");
+		printError("initParticleSimulator() - Error: Height is less than 1.\n");
+        return ERROR;
+	}
+	
+	if(!ps) {
+		printError("initParticleSimulator() - Error: Particle Simulator struct is null.\n");
         return ERROR;
 	}
 	
