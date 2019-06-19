@@ -15,12 +15,14 @@ Simulates how little rocks would fall in a 2D world.
 4: Execute TestParticleSimulator unit tests with the following command: ./TestParticleSimulator
 
 **_Example Input and Output_**
+
 **Input:**
 7 4
 .....::
 .T    :
   .T .:
   .   .
+  
 **Output:**
  .    .
  T .  :
