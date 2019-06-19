@@ -2,7 +2,7 @@
 
 Simulates how little rocks would fall in a 2D world. 
 
-***** Instructions for compiling and executing Particle Simulator 2D *****
+**Instructions for compiling and executing Particle Simulator 2D**
 
 **NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile provided will compile the program correctly using the gcc compiler. MinGW for Windows may also work as long as the dependencies for using Makefile are installed.**
 
