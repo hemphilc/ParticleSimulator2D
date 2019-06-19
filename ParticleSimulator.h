@@ -88,7 +88,7 @@ int initParticleSimulatorGravity(ParticleSimulator *ps);
                 current state.
     ret:    0 if success, -1 if error.
 */
-int printParticleSimulatorState(const ParticleSimulator ps
+int printParticleSimulatorState(const ParticleSimulator ps);
 
 /* Free all allocated memory in a ParticleSimulator struct.
     param:  ps - a pointer to a ParticleSimulator struct.
