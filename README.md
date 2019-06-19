@@ -13,3 +13,8 @@ Simulates how little rocks would fall in a 2D world.
 3: Execute ParticleSimulator with the following command and follow the prompts for user input: ./ParticleSimulator 
 
 4: Execute TestParticleSimulator unit tests with the following command: ./TestParticleSimulator
+
+
+**Testing**
+
+1:
