@@ -119,7 +119,7 @@ int main(void)
     freeParticleSimulatorGrid(&ps5Test);
 
 
-		ParticleSimulator ps6;
+    ParticleSimulator ps6;
     unsigned int w6 = 15;
     unsigned int h6 = 10;
 
@@ -133,18 +133,18 @@ int main(void)
     ps6.grid[2][w6] = '\0';
     strcpy(ps6.grid[3], ".T .T .T .T .T ");
     ps6.grid[3][w6] = '\0';
-		strcpy(ps6.grid[4], "               ");
-		ps6.grid[4][w6] = '\0';
-		strcpy(ps6.grid[5], "               ");
-		ps6.grid[5][w6] = '\0';
-		strcpy(ps6.grid[6], "...............");
-		ps6.grid[6][w6] = '\0';
-		strcpy(ps6.grid[7], ":::::::::::::::");
-		ps6.grid[7][w6] = '\0';
-		strcpy(ps6.grid[8], " . . . . . . . ");
-		ps6.grid[8][w6] = '\0';
-		strcpy(ps6.grid[9], " : : : : : : : ");
-		ps6.grid[9][w6] = '\0';
+    strcpy(ps6.grid[4], "               ");
+    ps6.grid[4][w6] = '\0';
+    strcpy(ps6.grid[5], "               ");
+    ps6.grid[5][w6] = '\0';
+    strcpy(ps6.grid[6], "...............");
+    ps6.grid[6][w6] = '\0';
+    strcpy(ps6.grid[7], ":::::::::::::::");
+    ps6.grid[7][w6] = '\0';
+    strcpy(ps6.grid[8], " . . . . . . . ");
+    ps6.grid[8][w6] = '\0';
+    strcpy(ps6.grid[9], " : : : : : : : ");
+    ps6.grid[9][w6] = '\0';
 
     ParticleSimulator ps6Test;
     assert(initParticleSimulator(&ps6Test, w6, h6) == 0);
@@ -157,18 +157,18 @@ int main(void)
     ps6Test.grid[2][w6] = '\0';
     strcpy(ps6Test.grid[3], " T  T  T  T  T ");
     ps6Test.grid[3][w6] = '\0';
-		strcpy(ps6Test.grid[4], "               ");
-		ps6Test.grid[4][w6] = '\0';
-		strcpy(ps6Test.grid[5], "               ");
-		ps6Test.grid[5][w6] = '\0';
-		strcpy(ps6Test.grid[6], "   .  .  .  . .");
-		ps6Test.grid[6][w6] = '\0';
-		strcpy(ps6Test.grid[7], ":::: :::.: ::::");
-		ps6Test.grid[7][w6] = '\0';
-		strcpy(ps6Test.grid[8], "::::.:::::.::::");
-		ps6Test.grid[8][w6] = '\0';
-		strcpy(ps6Test.grid[9], ":::::::::::::::");
-		ps6Test.grid[9][w6] = '\0';
+    strcpy(ps6Test.grid[4], "               ");
+    ps6Test.grid[4][w6] = '\0';
+    strcpy(ps6Test.grid[5], "               ");
+    ps6Test.grid[5][w6] = '\0';
+    strcpy(ps6Test.grid[6], "   .  .  .  . .");
+    ps6Test.grid[6][w6] = '\0';
+    strcpy(ps6Test.grid[7], ":::: :::.: ::::");
+    ps6Test.grid[7][w6] = '\0';
+    strcpy(ps6Test.grid[8], "::::.:::::.::::");
+    ps6Test.grid[8][w6] = '\0';
+    strcpy(ps6Test.grid[9], ":::::::::::::::");
+    ps6Test.grid[9][w6] = '\0';
 
     assert(initParticleSimulatorGravity(&ps6) == 0);
     for(i = 0; i < h6; i++) {
