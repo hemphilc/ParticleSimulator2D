@@ -2,11 +2,12 @@
 
 Simulates how little rocks would fall in a 2D world. 
 
-**Instructions for compiling and executing Particle Simulator 2D**
-
 **NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile provided will compile the program correctly using the gcc compiler. MinGW for Windows may also work as long as the dependencies for using Makefile are installed.**
 
-**NOTE: The current program is set to allow a width and height from 1 to 20. This can be changed by going into the ParticleSimulator.h file and adjusting the RANGE_LOW and RANGE_HIGH constant definitions. In addition to adjusting RANGE_LOW and RANGE_HIGH, you may be required to adjust the DIM_BUFF_LEN constant as well. DIM_BUFF_LEN depends on how many digits RANGE_HIGH contains. For example, if RANGE_HIGH is 20, then the buffer should be able to hold 2 digits + space + 2 digits + null terminator = 6. Another example, if RANGE_HIGH is 2000, then the buffer should be able to hold 4 digits + space + 4 digits + null terminator = 10. Failing to follow this convention will cause undefined behaviour or outright failure.
+**NOTE: The current program is set to allow a width and height from 1 to 20. This can be changed by going into the ParticleSimulator.h file and adjusting the RANGE_LOW and RANGE_HIGH constant definitions. In addition to adjusting RANGE_LOW and RANGE_HIGH, you may be required to adjust the DIM_BUFF_LEN constant as well. DIM_BUFF_LEN depends on how many digits RANGE_HIGH contains. For example, if RANGE_HIGH is 20, then the buffer should be able to hold 2 digits + space + 2 digits + null terminator = 6. Another example, if RANGE_HIGH is 2000, then the buffer should be able to hold 4 digits + space + 4 digits + null terminator = 10. Failing to follow this convention will cause undefined behaviour or outright failure.**
+
+
+**Instructions for compiling and executing Particle Simulator 2D**
 
 1: Place ParticleSimulator.c, ParticleSimulator.h, main.c, testMain.c, and Makefile into your current working directory.
 
@@ -50,4 +51,13 @@ The combination of manual testing for stdin input and unit-tests should be compr
   - Pass: all tests complete successfully
   - Fail: assertion causes unit tests to die
   
-2:
+2: Compile and execute ParticleSimulator. The program will prompt for two integers, which represent width and height, separated by a single space. The range of these integer values must be from 1 to 20 by default (unless changed in the source - see notes above). Test this by entering in different inputs.
+  - Pass: 7 4
+  - Pass: 1 20
+  - Fail: x 20
+  - Fail: 3 xjf
+  - Fail: 1 21
+  - Fail: 0 11
+ 
+ 3: 
+  
