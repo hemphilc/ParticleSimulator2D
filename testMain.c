@@ -8,23 +8,23 @@ int main(void)
 
 	printf("\nParticle Simulator 2D Unit Tests\n\n");
 
-	printf("######## Test initParticleSimulator() ########\n\n");
+	printf("######## TEST initParticleSimulator() ########\n\n");
 
 	ParticleSimulator ps1;
 	unsigned int w1 = 7;
 	unsigned int h1 = 4;
 
 	assert(initParticleSimulator(&ps1, w1, h1) == 0);
-	printf("TEST 1 PASS\n\n");
+	printf("TEST 1 PASSED\n\n");
 
 	assert(ps1.width == 7);
-	printf("TEST 2 PASS\n\n");
+	printf("TEST 2 PASSED\n\n");
 
 	assert(ps1.height == 4);
-	printf("TEST 3 PASS\n\n");
+	printf("TEST 3 PASSED\n\n");
 
 	assert(ps1.grid != NULL);
-	printf("TEST 4 PASS\n\n");
+	printf("TEST 4 PASSED\n\n");
 
 	freeParticleSimulatorGrid(&ps1);
 
@@ -33,22 +33,22 @@ int main(void)
 	unsigned int h2 = 0;
 
 	assert(initParticleSimulator(&ps2, w2, h2) == -1);
-	printf("TEST 5 PASS\n\n");
+	printf("TEST 5 PASSED\n\n");
 
 	w2 = 1;
 	assert(initParticleSimulator(&ps2, w2, h2) == -1);
-	printf("TEST 6 PASS\n\n");
+	printf("TEST 6 PASSED\n\n");
 
 	h2 = 1;
 	ParticleSimulator *ps3 = NULL;
 	assert(initParticleSimulator(ps3, w2, h2) == -1);
-	printf("TEST 7 PASS\n\n");
+	printf("TEST 7 PASSED\n\n");
 
 	printf("##############################################\n\n\n");
 
 
 
-	printf("##### Test printParticleSimulatorState() #####\n\n");
+	printf("##### TEST printParticleSimulatorState() #####\n\n");
 
 	ParticleSimulator ps4;
 	unsigned int w4 = 7;
@@ -56,7 +56,7 @@ int main(void)
 
 	ps4.grid = NULL;
 	assert(printParticleSimulatorState(ps4) == -1);
-	printf("TEST 1 PASS\n\n");
+	printf("TEST 1 PASSED\n\n");
 
 	assert(initParticleSimulator(&ps4, w4, h4) == 0);
 
@@ -70,7 +70,7 @@ int main(void)
 	ps4.grid[3][w4] = '\0';
 
 	assert(printParticleSimulatorState(ps4) == 0);
-	printf("TEST 2 PASS\n\n");
+	printf("TEST 2 PASSED\n\n");
 
 	freeParticleSimulatorGrid(&ps4);
 
@@ -78,7 +78,7 @@ int main(void)
 
 
 
-	printf("##### Test initParticleSimulatorGravity() #####\n\n");
+	printf("##### TEST initParticleSimulatorGravity() #####\n\n");
 
 	ParticleSimulator ps5;
 	unsigned int w5 = 7;
@@ -113,24 +113,24 @@ int main(void)
 	}
 	assert(printParticleSimulatorState(ps5) == 0);
 	assert(printParticleSimulatorState(ps5Test) == 0);
-	printf("TEST 1 PASS\n\n");
+	printf("TEST 1 PASSED\n\n");
 
 	freeParticleSimulatorGrid(&ps5);
 	freeParticleSimulatorGrid(&ps5Test);
 
 	ps5.grid = NULL;
 	assert(initParticleSimulatorGravity(&ps5) == -1);
-	printf("TEST 2 PASS\n\n");
+	printf("TEST 2 PASSED\n\n");
 
 	ParticleSimulator *ps6 = NULL;	
 	assert(initParticleSimulatorGravity(ps6) == -1);
-	printf("TEST 3 PASS\n\n");
+	printf("TEST 3 PASSED\n\n");
 
 	printf("##############################################\n\n\n");
 
 
 
-	printf("##### Test freeParticleSimulatorGrid() #####\n\n");
+	printf("##### TEST freeParticleSimulatorGrid() #####\n\n");
 
 	ParticleSimulator ps7;
 	unsigned int w7 = 12;
@@ -140,14 +140,31 @@ int main(void)
 	assert(ps7.grid != NULL);
 	freeParticleSimulatorGrid(&ps7);
 	assert(ps7.grid == NULL);
-	printf("TEST 1 PASS\n\n");
+	printf("TEST 1 PASSED\n\n");
 
 	freeParticleSimulatorGrid(&ps7);
-	printf("TEST 2 PASS\n\n");
+	printf("TEST 2 PASSED\n\n");
 
 	ParticleSimulator *ps8 = NULL;
 	freeParticleSimulatorGrid(ps8);
-	printf("TEST 3 PASS\n\n");
+	printf("TEST 3 PASSED\n\n");
+
+	printf("##############################################\n\n\n");
+
+
+
+	printf("############### TEST printError() #############\n\n");
+
+	char *msg = "THIS IS A TEST STRING\n";
+	printError(msg);
+	printf("TEST 1 PASSED\n\n");
+
+	msg = NULL;
+	printError(msg);
+	printf("TEST 2 PASSED\n\n");
+
+	printError("THIS IS ALSO A TEST STRING\n");
+	printf("TEST 3 PASSED\n\n");
 
 	printf("##############################################\n\n\n");
 
@@ -157,4 +174,3 @@ int main(void)
 
     return 0;
 }
-
