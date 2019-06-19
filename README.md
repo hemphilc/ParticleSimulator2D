@@ -43,7 +43,6 @@ The main concern of manual testing should be the following:
   - string length validation - are the input strings provided for each grid row too short or too long?
   - are error messages relevant and do they prompt the user to provide the correct input?
 
-The combination of manual testing for stdin input and unit-tests should be comprehensive enough to validate the program's accuracy and functionality.
 
 **Test Plan**
 
@@ -71,3 +70,5 @@ The combination of manual testing for stdin input and unit-tests should be compr
   - Fail:  .....:::::::
   - Fail:  .x...g:
   - Fail:  ...
+  
+The combination of manual testing for stdin input and unit-tests should be comprehensive enough to validate the program's accuracy and functionality.
