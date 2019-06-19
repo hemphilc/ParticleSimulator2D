@@ -44,6 +44,7 @@ from stdin and the validation of that input.
 The unit test suite, TestParticleSimulator, tests a number of different functions 
 individually, however, it does not test any of the three functions that involve 
 retrieving input from stdin. TestParticleSimulator covers the following:
+
   - initParticleSimulator()
   - printParticleSimulatorState()
   - initParticleSimulatorGravity()
@@ -83,6 +84,7 @@ The main concern of manual testing should be the following:
 represent width and height, separated by a single space. The range of these integer values 
 must be from 1 to 20 by default (unless changed in the source - see notes above). Test this 
 by entering in different inputs.
+
   - Pass: 7 4
   - Pass: 1 20
   - Fail: x 20
@@ -96,6 +98,7 @@ by entering in different inputs.
  dimensional input, then x would be 7 and they will be prompted to provide 4 rows of strings 
  with length 7. Test this by entering in different inputs. The example inputs below assume 
  width: 7 and height: 4.
+ 
   - Pass:  .....::
            .T    :
              .T .:
