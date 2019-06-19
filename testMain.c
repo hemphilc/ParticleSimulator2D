@@ -39,7 +39,7 @@ int main(void)
 	
 	
 	
-	printf("##### Test printParticleSimulatorState() #####n\n");
+	printf("##### Test printParticleSimulatorState() #####\n\n");
 	
 	ParticleSimulator ps3;
 	unsigned int w3 = 7;
@@ -68,12 +68,49 @@ int main(void)
 	
 	
 	
-	printf("##### Test printParticleSimulatorState() #####n\n");
+	printf("##### Test initParticleSimulatorGravity() #####\n\n");
 	
-	ParticleSimulator ps3;
-	unsigned int w3 = 7;
-	unsigned int h3 = 4;
-	ps3.grid = NULL;
+	ParticleSimulator ps4;
+	unsigned int w4 = 7;
+	unsigned int h4 = 4;
+
+	assert(initParticleSimulator(&ps4, w4, h4) == 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	strcpy(ps4.grid[0], ".....::");
+	ps4.grid[0][w4] = '\0';
+	strcpy(ps4.grid[1], ".T    :");
+	ps4.grid[1][w4] = '\0'; 
+	strcpy(ps4.grid[2], "  .T .:");
+	ps4.grid[2][w4] = '\0';
+	strcpy(ps4.grid[3], "  .   .");   
+	ps4.grid[3][w4] = '\0';
+	
+	
 	
 	
 	
