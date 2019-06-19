@@ -30,11 +30,11 @@ int main(void)
     }
 
     // Print initial grid state.
-    printf("\nPrinting initial state...\n\n");
-    if(printParticleSimulatorState(ps) == ERROR) {
-        freeParticleSimulatorGrid(&ps);
-        return EXIT_FAILURE;
-    }
+    //printf("\nPrinting initial state...\n\n");
+    //if(printParticleSimulatorState(ps) == ERROR) {
+    //    freeParticleSimulatorGrid(&ps);
+    //    return EXIT_FAILURE;
+    //}
 
     // Initiate gravity on grid.
     if(initParticleSimulatorGravity(&ps) == ERROR) {
@@ -43,7 +43,7 @@ int main(void)
     }
 
     // Print post-gravity grid state.
-    printf("\nPrinting post-gravity state...\n\n");
+    //printf("\nPrinting post-gravity state...\n\n");
     if(printParticleSimulatorState(ps) == ERROR) {
         freeParticleSimulatorGrid(&ps);
         return EXIT_FAILURE;
