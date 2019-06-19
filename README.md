@@ -14,6 +14,8 @@ Simulates how little rocks would fall in a 2D world.
 
 4: Execute TestParticleSimulator unit tests with the following command: ./TestParticleSimulator
 
+5: Entering the following will clean the directory: make clean
+
 
 **Testing**
 
@@ -25,3 +27,10 @@ The unit test suite, TestParticleSimulator, tests a number of different function
   - initParticleSimulatorGravity()
   - freeParticleSimulatorGrid()
   - printError()
+
+For the manual testing, test input validation by providing different inputs. Invalid inputs will provide error messages to the user regarding what was wrong with the input.
+
+For example, the first prompt requires the user to provide two integer values with a space between them for a given range. The current default RANGE_HIGH is set to 20 and can be easily changed if necessary. If the user provides "4 21" as input, they will receive an input error and the program will die due to input out of range. Furthermore, the input can only be integers for the initial input, so providing "x 12" will also provide an error and cause the program to die.
+
+The main concern of manual testing should be the following:
+
