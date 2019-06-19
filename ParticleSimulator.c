@@ -215,7 +215,6 @@ int getGridRowInputs(ParticleSimulator *ps) {
 
         // We know the input is not too long, so if the input is not
         // equal to the specified width, then it is too short.
-        // to make sure its not too short
         if(strlen(buffer) != ps->width) {
             printError("Error: Input provided was too short.\n");
             return ERROR;
