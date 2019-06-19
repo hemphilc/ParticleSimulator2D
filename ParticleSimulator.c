@@ -187,6 +187,7 @@ void freeParticleSimulatorGrid(ParticleSimulator *ps) {
         free(ps->grid[i]); // Free each string pointer
     }
     free(ps->grid); // Free the array of pointers
+	ps->grid = NULL;
 }
 
 
