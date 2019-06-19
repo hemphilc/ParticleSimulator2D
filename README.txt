@@ -31,10 +31,10 @@ command line. You should now see two binary executables in your working director
 ParticleSimulator and TestParticleSimulator
 
 3: Execute ParticleSimulator with the following command and follow the prompts for 
-user input: ./ParticleSimulator 
+user input: ./ParticleSimulator or .\ParticleSimulator for Windows
 
 4: Execute TestParticleSimulator unit tests with the following command: 
-./TestParticleSimulator
+./TestParticleSimulator or .\TestParticleSimulator for Windows
 
 5: Entering the following will clean the directory: make clean
 
