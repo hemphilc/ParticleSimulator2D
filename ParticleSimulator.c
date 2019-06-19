@@ -128,21 +128,21 @@ int printParticleSimulatorState(ParticleSimulator ps) {
 
 
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h) {
-	if(w <= 0) {
-		printError("initParticleSimulator() - Error: Width is less than 1.\n");
-		return ERROR;
-	}
-	
-	if(h <= 0) {
-		printError("initParticleSimulator() - Error: Height is less than 1.\n");
-		return ERROR;
-	}
-	
-	if(!ps) {
-		printError("initParticleSimulator() - Error: ParticleSimulator pointer is null.\n");
-		return ERROR;
-	}
-	
+    if(w <= 0) {
+        printError("initParticleSimulator() - Error: Width is less than 1.\n");
+        return ERROR;
+    }
+
+    if(h <= 0) {
+        printError("initParticleSimulator() - Error: Height is less than 1.\n");
+        return ERROR;
+    }
+
+    if(!ps) {
+        printError("initParticleSimulator() - Error: ParticleSimulator pointer is null.\n");
+        return ERROR;
+    }
+
     ps->width = w;
     ps->height = h;
     ps->grid = malloc(ps->height * sizeof(char*));
@@ -180,14 +180,14 @@ void freeParticleSimulatorGrid(ParticleSimulator *ps) {
     if(!ps->grid) {
         printError("freeParticleSimulatorGrid() - Error: ParticleSimulator grid pointer is null.\n");
         return;
-    }		
+    }
 
     unsigned int i;
     for(i = 0; i < ps->height; i++) {
         free(ps->grid[i]); // Free each string pointer
     }
     free(ps->grid); // Free the array of pointers
-	ps->grid = NULL;
+    ps->grid = NULL;
 }
 
 
@@ -345,8 +345,8 @@ int getLine(const char *prompt, char *buffer, size_t sz) {
 
 
 void printError(const char *msg) {
-	if(msg != NULL) {
-		fprintf(stderr, "%s\n", msg);
-		fflush(stderr);
-	}
+    if(msg != NULL) {
+        fprintf(stderr, "%s\n", msg);
+        fflush(stderr);
+    }
 }
