@@ -129,12 +129,12 @@ int printParticleSimulatorState(ParticleSimulator ps) {
 
 int initParticleSimulator(ParticleSimulator *ps, unsigned int w, unsigned int h) {
 	if(w <= 0) {
-		pritnError("initParticleSimulator() - Error: Width is less than 1");
+		printError("initParticleSimulator() - Error: Width is less than 1");
         return ERROR;
 	}
 	
 	if(h <= 0) {
-		pritnError("initParticleSimulator() - Error: Height is less than 1");
+		printError("initParticleSimulator() - Error: Height is less than 1");
         return ERROR;
 	}
 	
