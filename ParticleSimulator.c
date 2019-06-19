@@ -104,8 +104,6 @@ int initParticleSimulatorGravity(ParticleSimulator *ps) {
             else if(ps->grid[j][i] == ':' || ps->grid[j][i] == 'T') {
                 j--;
             }
-
-            //printParticleSimulatorState(*ps);
         }
     }
 
