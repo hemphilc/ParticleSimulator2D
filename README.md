@@ -59,5 +59,15 @@ The combination of manual testing for stdin input and unit-tests should be compr
   - Fail: 1 21
   - Fail: 0 11
  
- 3: 
-  
+ 3: Compile and execute ParticleSimulator. Provide valid input for the first prompt. For the next prompt(s), the program will ask the user to provide a row of length x consisting only of ' ', '.', ':', and 'T' characters. For example, if the user provided 7 4 as the dimensional input, then x would be 7 and they will be prompted to provide 4 rows of strings with length 7. Test this by entering in different inputs. The example inputs below assume width: 7 and height: 4.
+  - Pass:  .....::
+           .T    :
+             .T .:
+             .   .
+  - Fail:  .....::
+           .T    :
+             .T .:
+           x  . x.
+  - Fail:  .....:::::::
+  - Fail:  .x...g:
+  - Fail:  ...
