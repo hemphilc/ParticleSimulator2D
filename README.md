@@ -4,17 +4,12 @@ Simulates how little rocks would fall in a 2D world.
 
 ***** Instructions for compiling and executing Particle Simulator 2D *****
 
-NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile
-will only compile the program correctly using gcc.
+NOTE: This program was developed using gcc compiler on an Linux Ubuntu machine. The Makefile provided will only compile the program correctly using the gcc compiler.
 
-Step 1: Place ParticleSimulator.c, ParticleSimulator.h, main.c, and testMain.c, and Makefile into your current working directory.
+1: Place ParticleSimulator.c, ParticleSimulator.h, main.c, testMain.c, and Makefile into your current working directory.
 
-Step 2: Give the ParticleSimulator.c file permission to execute by entering the following command: 
-      chmod +x ParticleSimulator.c
+2: To compile both the Particle Simulator and the unit tests, enter 'make' into the command line. You should now see two binary executables in your working directory: ParticleSimulator and TestParticleSimulator
 
-Step 3: Compile ParticleSimulator.c with the following command: 
-      gcc ParticleSimulator.c -o ParticleSimulator
+3: Execute ParticleSimulator with the following command and follow the prompts for user input: ./ParticleSimulator 
 
-Step 4: Execute ParticleSimulator with either of the following commands: ParticleSimulator  OR  ./ParticleSimulator
-
-Step 5: Follow the prompts for user input.
+4: Execute TestParticleSimulator unit tests with the following command: ./TestParticleSimulator
