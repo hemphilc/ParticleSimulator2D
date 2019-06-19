@@ -70,5 +70,8 @@ The main concern of manual testing should be the following:
   - Fail:  .....:::::::
   - Fail:  .x...g:
   - Fail:  ...
+  - Fail:  ...::.:
+           .2x T
+  
   
 The combination of manual testing for stdin input and unit-tests should be comprehensive enough to validate the program's accuracy and functionality.
