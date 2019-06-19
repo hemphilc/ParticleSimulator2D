@@ -4,36 +4,36 @@
 
 int main(void)
 {
-unsigned int i;
+	unsigned int i;
 
-printf("\nParticle Simulator 2D Unit Tests\n\n");
+	printf("\nParticle Simulator 2D Unit Tests\n\n");
 
-printf("######## TEST initParticleSimulator() ########\n\n");
+	printf("######## TEST initParticleSimulator() ########\n\n");
 
-ParticleSimulator ps1;
-unsigned int w1 = 7;
-unsigned int h1 = 4;
+	ParticleSimulator ps1;
+	unsigned int w1 = 7;
+	unsigned int h1 = 4;
 
-assert(initParticleSimulator(&ps1, w1, h1) == 0);
-printf("TEST 1 PASSED\n\n");
+	assert(initParticleSimulator(&ps1, w1, h1) == 0);
+	printf("TEST 1 PASSED\n\n");
 
-assert(ps1.width == 7);
-printf("TEST 2 PASSED\n\n");
+	assert(ps1.width == 7);
+	printf("TEST 2 PASSED\n\n");
 
-assert(ps1.height == 4);
-printf("TEST 3 PASSED\n\n");
+	assert(ps1.height == 4);
+	printf("TEST 3 PASSED\n\n");
 
-assert(ps1.grid != NULL);
-printf("TEST 4 PASSED\n\n");
+	assert(ps1.grid != NULL);
+	printf("TEST 4 PASSED\n\n");
 
-freeParticleSimulatorGrid(&ps1);
+	freeParticleSimulatorGrid(&ps1);
 
-ParticleSimulator ps2;
-unsigned int w2 = 0;
-unsigned int h2 = 0;
+	ParticleSimulator ps2;
+	unsigned int w2 = 0;
+	unsigned int h2 = 0;
 
-assert(initParticleSimulator(&ps2, w2, h2) == -1);
-printf("TEST 5 PASSED\n\n");
+	assert(initParticleSimulator(&ps2, w2, h2) == -1);
+	printf("TEST 5 PASSED\n\n");
 
 	w2 = 1;
 	assert(initParticleSimulator(&ps2, w2, h2) == -1);
