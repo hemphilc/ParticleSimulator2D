@@ -17,4 +17,11 @@ Simulates how little rocks would fall in a 2D world.
 
 **Testing**
 
-1:
+Testing the program involves unit tests, as well as some manual testing to test input from stdin and the validation of that input.
+
+The unit test suite, TestParticleSimulator, tests a number of different functions individually, however, it does not test any of the three functions that involve retrieving input from stdin. TestParticleSimulator covers the following:
+  - initParticleSimulator()
+  - printParticleSimulatorState()
+  - initParticleSimulatorGravity()
+  - freeParticleSimulatorGrid()
+  - printError()
