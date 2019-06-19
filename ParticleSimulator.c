@@ -329,6 +329,8 @@ int getLine(const char *prompt, char *buffer, size_t sz) {
 
 
 void printError(const char *msg) {
-    fprintf(stderr, "%s\n", msg);
-    fflush(stderr);
+	if(msg != NULL)
+		fprintf(stderr, "%s\n", msg);
+		fflush(stderr);
+	}
 }
