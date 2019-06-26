@@ -56,7 +56,9 @@ int initParticleSimulatorGravity(ParticleSimulator *ps) {
 
                     // If we've reached 0, we've cycled
                     // through the entire column
-                    if(k == 0) { j--; }
+                    if(k == 0) {
+                        j = 0;
+                    }
                 }
             }
 
@@ -95,7 +97,9 @@ int initParticleSimulatorGravity(ParticleSimulator *ps) {
 
                     // If we've reached 0, we've cycled
                     // through the entire column
-                    if(k == 0) { j--; }
+                    if(k == 0) {
+                        j = 0;
+                    }
                 }
             }
 
